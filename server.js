@@ -29,8 +29,8 @@ app.use("/api/v1/admin", require("./routes/adminRoutes"));
 // STATIC FOLDER
 app.use(express.static(path.join(__dirname,"./client/build")));
 // STATIC ROUTES
-app.get('*',function(req,res){
-  res.sendFile(path.join(__dirname,"./client/build/index.html"))
+app.get('/',function(req,res){
+  res.json({message: "Health check OK"});
 })
 //port
 const PORT = process.env.PORT || 8080;
@@ -38,7 +38,7 @@ const PORT = process.env.PORT || 8080;
 //listen
 app.listen(PORT, () => {
   console.log(
-    `Node Server Running In ${process.env.DEV_MODE} ModeOn Port ${process.env.PORT}`
-      .bgBlue.white
+   ` Node Server Running In ${process.env.DEV_MODE} ModeOn Port ${process.env.PORT}
+      .bgBlue.white`
   );
 });
