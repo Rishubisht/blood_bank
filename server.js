@@ -23,8 +23,8 @@ app.use(morgan("dev"));
 app.use("/api/v1/test", require("./Routes/testRoutes"));
 app.use("/api/v1/auth", require("./Routes/authRoutes"));
 app.use("/api/v1/inventory", require("./Routes/inventoryRoutes"));
-app.use("/api/v1/analytics", require("./routes/analyticsRoutes"));
-app.use("/api/v1/admin", require("./routes/adminRoutes"));
+app.use("/api/v1/analytics", require("./Routes/analyticsRoutes"));
+app.use("/api/v1/admin", require("./Routes/adminRoutes"));
 
 // STATIC FOLDER
 app.use(express.static(path.join(__dirname,"./client/build")));
@@ -38,7 +38,7 @@ const PORT = process.env.PORT || 8080;
 //listen
 app.listen(PORT, () => {
   console.log(
-   ` Node Server Running In ${process.env.DEV_MODE} ModeOn Port ${process.env.PORT}
-      .bgBlue.white`
+    `Node Server Running In ${process.env.DEV_MODE} ModeOn Port ${process.env.PORT}`
+      .bgBlue.white
   );
 });
